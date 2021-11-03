@@ -83,7 +83,7 @@ jobs:
 
             -
                 name: Restrict Symfony version
-                if: matrix.symfony != ''
+                if: matrix.symfony != '^4.4' || matrix.symfony != '^4.2' || matrix.symfony != '^4.26'
                 run: bin/require-symfony-version composer.json "${{ matrix.symfony }}"
 
             -
