@@ -80,12 +80,7 @@ jobs:
             -
                 name: Run webserver
                 run: symfony server:start --port=8080 --dir=public --daemon
-
-            -
-                name: Restrict Symfony version
-                if: matrix.symfony != '^4.4' || matrix.symfony != '^4.2' || matrix.symfony != '^4.26'
-                run: bin/require-symfony-version composer.json "${{ matrix.symfony }}"
-
+                
             -
                 name: Get Composer cache directory
                 id: composer-cache
