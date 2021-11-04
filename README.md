@@ -26,6 +26,8 @@ $ php bin/console server:start
 $ open http://localhost:8000/
 ```
 
+<strong>Remember: </strong> You need to create your own `.env.local` with your local configuration based on `.env` 
+
 Troubleshooting
 ---------------
 

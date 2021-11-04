@@ -4,4 +4,4 @@ sylius_grid:
             fields:
                 color:
                     type: string
-                    label: sylius.ui.color
+                    label: sylius.color
