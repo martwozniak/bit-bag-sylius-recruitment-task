@@ -16,9 +16,9 @@ class Product extends \Sylius\Component\Core\Model\Product
     const COLOR_GREEN = 'GREEN';
     const COLOR_BLUE = 'BLUE';
 
-    private string $color;
+    private ?string $color = null;
 
-    public function getColor(): string
+    public function getColor(): ?string
     {
         return $this->color;
     }
