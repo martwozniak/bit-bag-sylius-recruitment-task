@@ -4,25 +4,14 @@
     </a>
 </p>
 
-<h1 align="center">Sylius Standard Edition</h1>
+<h1 align="center">BitBag Sylius Recruitment Task</h1>
 
-<p align="center">This is Sylius Standard Edition repository for starting new projects.</p>
+<p align="center">Recruitment project with basic phpunit tests</p>
 
 About
 -----
+This project extends basic Sylius Product class. Now Product is extended by field called 'color'. Basic Product Grid have new field related to 'color'. Users now can see product color (Attributes)
 
-Sylius is the first decoupled eCommerce platform based on [**Symfony**](http://symfony.com) and [**Doctrine**](http://doctrine-project.org). 
-The highest quality of code, strong testing culture, built-in Agile (BDD) workflow and exceptional flexibility make it the best solution for application tailored to your business requirements. 
-Enjoy being an eCommerce Developer again!
-
-Powerful REST API allows for easy integrations and creating unique customer experience on any device.
-
-We're using full-stack Behavior-Driven-Development, with [phpspec](http://phpspec.net) and [Behat](http://behat.org)
-
-Documentation
--------------
-
-Documentation is available at [docs.sylius.com](http://docs.sylius.com).
 
 Installation
 ------------
@@ -31,6 +20,7 @@ Installation
 $ wget http://getcomposer.org/composer.phar
 $ php composer.phar create-project sylius/sylius-standard project
 $ cd project
+$ composer install
 $ yarn install
 $ yarn build
 $ php bin/console sylius:install
@@ -50,33 +40,21 @@ $ tail -f var/log/dev.log
 
 If you are using the supplied Vagrant development environment, please see the related [Troubleshooting guide](etc/vagrant/README.md#Troubleshooting) for more information.
 
-Contributing
-------------
+Testing
+---------------
 
-Would like to help us and build the most developer-friendly eCommerce platform? Start from reading our [Contribution Guide](https://docs.sylius.com/en/latest/contributing/)!
+If you are using PHPStorm then import phpunit.xml.dist to your config. 
+Otherwise use command:
+```bash
+$ php ./vendor/bin/phpunit
+```
 
-Stay Updated
-------------
+All tests are in `/test` directory and file structure of test files represents application structure.  
 
-If you want to keep up with the updates, [follow the official Sylius account on Twitter](http://twitter.com/Sylius) and [like us on Facebook](https://www.facebook.com/SyliusEcommerce/).
 
-Bug Tracking
-------------
+Common Errors
+---------------
 
-If you want to report a bug or suggest an idea, please use [GitHub issues](https://github.com/Sylius/Sylius/issues).
+> Unknown column type "json_array" requested. Any Doctrine type that you use has to be registered ... 
 
-Community Support
------------------
-
-Have a question? Join our [Slack](https://slackinvite.me/to/sylius-devs) or post it on [StackOverflow](http://stackoverflow.com) tagged with "sylius". You can also join our [group on Facebook](https://www.facebook.com/groups/sylius/)!
-
-MIT License
------------
-
-Sylius is completely free and released under the [MIT License](https://github.com/Sylius/Sylius/blob/master/LICENSE).
-
-Authors
--------
-
-Sylius was originally created by [Paweł Jędrzejewski](http://pjedrzejewski.com).
-See the list of [contributors from our awesome community](https://github.com/Sylius/Sylius/contributors).
+use `composer require doctrine/dbal:"^2.6"`
