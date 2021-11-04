@@ -1,7 +1,5 @@
 <p align="center">
-    <a href="https://sylius.com" target="_blank">
-        <img src="https://demo.sylius.com/assets/shop/img/logo.png" />
-    </a>
+        <img src="https://raw.githubusercontent.com/martwozniak/bit-bag-sylius-recruitment-task/main/doc/bitbag-task-1024x535.png" />
 </p>
 
 <h1 align="center">BitBag Sylius Recruitment Task</h1>
@@ -52,9 +50,26 @@ $ php ./vendor/bin/phpunit
 All tests are in `/test` directory and file structure of test files represents application structure.  
 
 
-Common Errors
+Common Issues
 ---------------
 
 > Unknown column type "json_array" requested. Any Doctrine type that you use has to be registered ... 
 
 use `composer require doctrine/dbal:"^2.6"`
+
+
+Screenshots
+---------------
+<i>A picture is worth a thousand words</i>
+<p align="center">
+        <img src="https://raw.githubusercontent.com/martwozniak/bit-bag-sylius-recruitment-task/main/doc/color-select.png" />
+        Screenshot 1. Color select from admin menu
+</p>
+<p align="center">
+        <img src="https://raw.githubusercontent.com/martwozniak/bit-bag-sylius-recruitment-task/main/doc/color-attribute-user.png" />
+        Screenshot 2. Color from user perspective
+</p>
+<p align="center">
+        <img src="https://raw.githubusercontent.com/martwozniak/bit-bag-sylius-recruitment-task/main/doc/grid.png" />
+        Screenshot 3. Product grid with Color property
+</p>
