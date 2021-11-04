@@ -14,5 +14,5 @@ jobs:
               run: php --version
             - name: Print PHPUnit version
               run: phpunit --version
-            - name: run tests with PHPUnit
-              run: phpunit
+            - name: Composer install
+              run: composer install
