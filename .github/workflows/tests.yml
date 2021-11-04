@@ -21,7 +21,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [7.4, 7.3]
+                php: [7.4]
                 symfony: [^4.4]
                 node: [10.x]
                 mysql: [5.7, 8.0]
@@ -100,42 +100,8 @@ jobs:
                 run: composer install --no-interaction
 
             -
-                name: Get Yarn cache directory
-                id: yarn-cache
-                run: echo "::set-output name=dir::$(yarn cache dir)"
-
-            -
-                name: Cache Yarn
-                uses: actions/cache@v2
-                with:
-                    path: ${{ steps.yarn-cache.outputs.dir }}
-                    key: ${{ runner.os }}-node-${{ matrix.node }}-yarn-${{ hashFiles('**/package.json **/yarn.lock') }}
-                    restore-keys: |
-                        ${{ runner.os }}-node-${{ matrix.node }}-yarn-
-
-            -
-                name: Install JS dependencies
-                run: yarn install
-
-            -
-                name: Prepare test application database
-                run: |
-                    APP_DEBUG=1 bin/console doctrine:database:create -vvv
-                    bin/console doctrine:migrations:migrate -n -vvv
-
-            -
-                name: Prepare test application assets
-                run: |
-                    bin/console assets:install public -vvv
-                    yarn build
-
-            -
                 name: Prepare test application cache
                 run: bin/console cache:warmup -vvv
-
-            -
-                name: Load fixtures
-                run: bin/console sylius:fixtures:load -n
 
             -
                 name: Validate composer.json
@@ -144,10 +110,6 @@ jobs:
             -
                 name: Run security check
                 run: symfony security:check
-
-            -
-                name: Validate database schema
-                run: bin/console doctrine:schema:validate
 
             -
                 name: Run PHPUnit
